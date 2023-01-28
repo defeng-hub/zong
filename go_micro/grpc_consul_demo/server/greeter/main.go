@@ -22,7 +22,8 @@ func (h Hello) SayHello(c context.Context, req *greeter.HelloReq) (*greeter.Hell
 func main() {
 	//注册consul服务
 	consulConfig := api.DefaultConfig()
-	//consulConfig.Address = "127.0.0.1:8500"
+	//客户机的地址, 也可以是consul的服务端,但是一般用客户端
+	consulConfig.Address = "192.168.88.135:8500"
 
 	consulClient, _ := api.NewClient(consulConfig)
 
@@ -32,9 +33,9 @@ func main() {
 		Tags:    []string{},
 		Name:    "HelloService",
 		Port:    8081,
-		Address: "127.0.0.1",
+		Address: "192.168.1.25",
 		Check: &api.AgentServiceCheck{
-			TCP:      "127.0.0.1:8081",
+			TCP:      "192.168.1.25:8081",
 			Timeout:  "60s",
 			Interval: "5s",
 		},
@@ -46,7 +47,7 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 	greeter.RegisterGreeterServer(grpcServer, &Hello{})
-	listen, err := net.Listen("tcp", "127.0.0.1:8081")
+	listen, err := net.Listen("tcp", "0.0.0.0:8081")
 	if err != nil {
 		return
 	}
