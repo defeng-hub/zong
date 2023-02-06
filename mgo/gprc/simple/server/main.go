@@ -20,7 +20,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterHelloServiceServer(grpcServer, new(HelloServiceServer))
 
-	lis, _ := net.Listen("tcp", ":1234")
+	lis, _ := net.Listen("tcp", "127.0.0.1:1234")
 
 	log.Printf("listen 启动成功")
 	grpcServer.Serve(lis)
