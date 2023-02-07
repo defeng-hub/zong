@@ -7,6 +7,7 @@ package hello;
 option go_package="github.com/defeng-hub/zong/mgo/gprc/simple/server/pb";
 service HelloService{
   rpc Hello (Request) returns (Response);
+  rpc Channel (stream Request) returns (stream Response){}
 }
 
 message Request{

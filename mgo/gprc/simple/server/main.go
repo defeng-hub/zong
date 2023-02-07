@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	"google.golang.org/grpc"
+	"gprc/simple/server/pb"
 	"log"
 	"net"
-	"simple/server/pb"
 )
 
 type HelloServiceServer struct {
@@ -16,6 +16,14 @@ type HelloServiceServer struct {
 func (s *HelloServiceServer) Hello(ctx context.Context, req *pb.Request) (resp *pb.Response, err error) {
 	return &pb.Response{Value: fmt.Sprintf("helloo, %s", req.Value)}, nil
 }
+func (s *HelloServiceServer) Channel(req pb.HelloService_ChannelServer) error {
+	for {
+		args, _ := req.Recv()
+		req.Send(&pb.Response{Value: fmt.Sprintf("helloo,%s", args.GetValue())})
+		//return nil
+	}
+}
+
 func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterHelloServiceServer(grpcServer, new(HelloServiceServer))

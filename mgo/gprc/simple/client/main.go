@@ -20,6 +20,24 @@ func main() {
 		panic(err)
 		return
 	}
-	fmt.Printf("%#v", resp)
+	fmt.Printf("aaa:%#v\n", resp)
+
+	stream, err := client.Channel(context.Background())
+	if err != nil {
+		panic(err)
+	}
+
+	go func() {
+		stream.Send(&pb.Request{Value: "alice"})
+		if err != nil {
+			panic(err)
+		}
+	}()
+
+	recv, err := stream.Recv()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("bbb:%#v\n", recv)
 
 }

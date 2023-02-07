@@ -1,4 +1,4 @@
-module simple
+module gprc
 
 go 1.18
 
