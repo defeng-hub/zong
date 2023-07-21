@@ -23,4 +23,10 @@ func main() {
 		value := num.(int)
 		fmt.Printf("强制类型转换，int:%d", value)
 	}
+
+	//	 for 循环
+	arr := []int{1, 2, 3, 4, 5}
+	for i := 0; i < len(arr); i++ {
+		fmt.Printf("")
+	}
 }
