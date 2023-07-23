@@ -9,7 +9,7 @@ type User struct {
 	name string
 }
 
-func func1() {
+func func12() {
 	typeI := reflect.TypeOf('a')
 	typeS := reflect.TypeOf("hello")
 	fmt.Println(typeI.Kind() == reflect.Chan)
