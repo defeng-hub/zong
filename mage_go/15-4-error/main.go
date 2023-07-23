@@ -1,1 +1,4 @@
-package _5_4_error
+package main
+
+func main() {
+}

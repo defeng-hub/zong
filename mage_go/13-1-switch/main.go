@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+func f1(i interface{}) {
+	if v, ok := i.(int); ok {
+		fmt.Println("整数", v)
+	}
+}
+
 func main() {
 	color := "yellow"
 
