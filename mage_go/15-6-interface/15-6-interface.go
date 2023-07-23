@@ -1,0 +1,1 @@
+package mage_go
