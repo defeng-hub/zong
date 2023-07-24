@@ -14,6 +14,9 @@ func func12() {
 	typeS := reflect.TypeOf("hello")
 	fmt.Println(typeI.Kind() == reflect.Chan)
 	fmt.Println(typeS.String())
+	fmt.Println(typeS.String())
+	fmt.Println(typeS.String())
+
 }
 
 func func2() {
