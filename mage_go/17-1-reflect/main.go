@@ -33,6 +33,8 @@ func func2() {
 	//ref3 := reflect.TypeOf(u3)
 	fmt.Println(ref3.String())
 	fmt.Println(ref3.Kind())
+	fmt.Println(ref3.Kind())
+	fmt.Println(ref3.Kind())
 
 }
 
