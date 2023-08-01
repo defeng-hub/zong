@@ -1,10 +1,17 @@
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 func main() {
 	var m sync.Map
-
-	m.Store()
-	m.
+	once := sync.Once{}
+	once.Do(func() {
+		m = sync.Map{}
+	})
+	m.Store("aaa", "111")
+	v, _ := m.Load("aaa")
+	fmt.Printf("%s", v)
 }
