@@ -7,6 +7,8 @@ func main() {
 	//println(plusOne([]int{1, 2, 3}))
 	//strStr("mississippi", "issip")
 	//println(addBinary("11", "1"))
-	isPalindrome("A man, a plan, a canal: Panama")
+	//isPalindrome("A man, a plan, a canal: Panama")
 
+	//mergeTwoLists(mergeTwoListsList1, mergeTwoListsList2)
+	println(isIsomorphic("badc", "baba"))
 }
