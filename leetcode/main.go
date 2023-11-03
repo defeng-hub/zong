@@ -10,5 +10,8 @@ func main() {
 	//isPalindrome("A man, a plan, a canal: Panama")
 
 	//mergeTwoLists(mergeTwoListsList1, mergeTwoListsList2)
-	println(isIsomorphic("badc", "baba"))
+	//println(isIsomorphic("badc", "baba"))
+	//rotate([]int{1, 2, 3, 4, 5, 6, 7}, 3)
+
+	//summaryRanges([]int{0, 2, 3, 4, 6, 8, 9})
 }
