@@ -14,5 +14,7 @@ func main() {
 	//rotate([]int{1, 2, 3, 4, 5, 6, 7}, 3)
 
 	//summaryRanges([]int{0, 2, 3, 4, 6, 8, 9})
-	println(isHappy(19))
+	//println(isHappy(19))
+	//reverseBits(11111111111111111111111111111101)
+	removeDuplicates1([]int{0, 0, 1, 1, 1, 1, 2, 3, 3})
 }
