@@ -5,27 +5,6 @@ type ListNode struct {
 	Next *ListNode
 }
 
-var mergeTwoListsList1 = &ListNode{
-	Val: 1,
-	Next: &ListNode{
-		Val: 2,
-		Next: &ListNode{
-			Val:  3,
-			Next: nil,
-		},
-	},
-}
-var mergeTwoListsList2 = &ListNode{
-	Val: 4,
-	Next: &ListNode{
-		Val: 5,
-		Next: &ListNode{
-			Val:  6,
-			Next: nil,
-		},
-	},
-}
-
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	dummy := &ListNode{} // 用哨兵节点简化代码逻辑
 	cur := dummy         // cur 指向新链表的末尾
