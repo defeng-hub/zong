@@ -24,6 +24,6 @@ func rotateRight(head *ListNode, k int) *ListNode {
 	}
 	fast.Next = head
 	kk := slow.Next
-
+	slow.Next = nil
 	return kk
 }
