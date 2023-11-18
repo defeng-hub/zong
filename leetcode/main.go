@@ -35,5 +35,7 @@ func main() {
 	//reverseBits(11111111111111111111111111111101)
 	//removeDuplicates1([]int{0, 0, 1, 1, 1, 1, 2, 3, 3})
 	//reverseWords("a good   example")
-	rotateRight(mergeTwoListsList1, 3)
+	//rotateRight(mergeTwoListsList1, 3)
+	//merge1([][]int{{1, 3}, {2, 6}, {8, 10}, {15, 18}})
+	merge1([][]int{{1, 4}, {5, 6}})
 }
