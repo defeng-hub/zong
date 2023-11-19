@@ -22,7 +22,7 @@ func romanToInt(s string) int {
 	return all
 }
 
-func max(num int) (byte, int) {
+func max1(num int) (byte, int) {
 	if num-1000 >= 0 {
 		return 'M', num - 1000
 	}
@@ -52,7 +52,7 @@ func intToRoman(num int) string {
 	var b byte
 	var m = make(map[byte]int, 10)
 	for {
-		b, lnum = max(lnum)
+		b, lnum = max1(lnum)
 		_, ok := m[b]
 		if ok {
 			m[b]++

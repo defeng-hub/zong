@@ -1,28 +1,30 @@
 package main
 
+import (
+	"sort"
+)
+
 func merge1(intervals [][]int) [][]int {
-	var list = [10000]int{}
 
-	for _, interval := range intervals {
-		for i := interval[0]; i <= interval[1]; i++ {
-			list[i] = 1
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][0] < intervals[j][0]
+	})
+
+	var result [][]int
+	result = append(result, intervals[0])
+
+	for _, e := range intervals[1:] {
+		if result[len(result)-1][1] < e[0] {
+			result = append(result, e)
+		} else {
+			result[len(result)-1][1] = max(e[1], result[len(result)-1][1])
 		}
 	}
-
-	var res [][]int
-	start := 0
-	end := 0
-	for i := 1; i < len(list); i++ {
-		if list[i] == 1 {
-			start = i
-			end = i
-			for list[end] == 1 {
-				end++
-			}
-			i = end
-			end--
-			res = append(res, []int{start, end})
-		}
+	return nil
+}
+func max(a, b int) int {
+	if a > b {
+		return a
 	}
-	return res
+	return b
 }
