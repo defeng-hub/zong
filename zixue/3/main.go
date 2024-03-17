@@ -25,6 +25,7 @@ func (m *MyMap) Get(key int, maxWaitingDuration time.Duration) (int, error) {
 		m.Unlock()
 		return value, nil
 	}
+	return 0, nil
 }
 
 func (m *MyMap) Put(key, value int) {
